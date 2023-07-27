@@ -1,3 +1,36 @@
+<!DOCTYPE html>
 <html>
-this is sampath
+  <body>
+    <h1>JavaScript Functions</h1>
+    <h2>Callback Functions</h2>
+
+    <p>The result of the calculation is:</p>
+    <input type="text" placeholder="Enter Name" id="nameInput" />
+    <input type="text" placeholder="Enter JOB" id="jobInput" />
+    <button onclick="submitForm()">Submit</button>
+    <p id="demo"></p>
+
+    <script>
+      function submitForm() {
+        var user = {};
+        user.name = document.getElementById("nameInput").value;
+        user.job = document.getElementById("jobInput").value;
+        console.log(user);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://reqres.in/api/users");
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 4) {
+            var resultObj = JSON.parse(this.responseText);
+            document.getElementById("demo").innerHTML =
+              resultObj.name +
+              " is successfully created at" +
+              resultObj.createdAt;
+          }
+        };
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify(user));
+      }
+    </script>
+  </body>
 </html>

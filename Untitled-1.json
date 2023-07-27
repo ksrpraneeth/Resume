@@ -1,0 +1,27 @@
+{
+  "employees": [
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "salary": [
+        {
+          "earnings": {
+            "basic": 100,
+            "basic": 100,
+            "basic": 100,
+            "basic": 100
+          },
+          "deductions": {
+            "basic": 100,
+            "basic": 100,
+            "basic": 100,
+            "basic": 100
+          },
+          "month": "January"
+        }
+      ]
+    },
+    { "firstName": "Anna", "lastName": "Smith" },
+    { "firstName": "Peter", "lastName": "Jones" }
+  ]
+}
