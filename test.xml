@@ -1,0 +1,12 @@
+<User>
+    <Name></Name>
+    <JOB></JOB>
+    <DOB></DOB>
+    <Pay>
+        <Basic></Basic>
+        <HRA></HRA>
+        <CCA></CCA>
+        <PT></PT>
+        <Month></Month>
+    </Pay>
+</User>

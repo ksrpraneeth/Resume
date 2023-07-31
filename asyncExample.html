@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    function createUser() {
+      var name = document.getElementById("nameInput").value;
+      var job = document.getElementById("jobInput").value;
+      if (name.length == 0) {
+        document.getElementById("message").innerHTML = "Enter Name";
+      } else if (job.length == 0) {
+        document.getElementById("message").innerHTML = "Enter Job";
+      } else {
+        var userRequest = {
+            "name":name,
+            "job":job
+        }
+        var userRequestString = JSON.stringify(userRequest);
+        console.log(userRequestString);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://reqres.in/api/users");
+        xhr.setRequestHeader("Content-Type","application/json")
+        xhr.onload = function () {
+            var response = JSON.parse(xhr.responseText);
+            document.getElementById("message").innerHTML = response.name+" is created at "+response.createdAt
+          console.log(xhr.responseText);
+        };
+        xhr.send(userRequestString);
+      }
+    }
+  </script>
+  <body>
+    <input type="text" id="nameInput" required placeholder="Enter Name" />
+    <input type="text" id="jobInput" required placeholder="Enter JOB" />
+
+    <button onclick="createUser()">Create</button>
+
+    <p id="message"></p>
+  </body>
+</html>

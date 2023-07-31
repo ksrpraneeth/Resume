@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "name": "praneeth",
+      "age": 16,
+      "dob": "12/12/1993",
+      "pay": [
+        {
+          "basic": 100,
+          "hra": 100,
+          "cca": 100,
+          "month": "JAN"
+        },
+        {
+          "basic": 100,
+          "hra": 100,
+          "cca": 100,
+          "month": "JAN"
+        },
+        {
+          "basic": 100,
+          "hra": 100,
+          "cca": 100,
+          "month": "JAN"
+        }
+      ]
+    }
+  ]
+}
